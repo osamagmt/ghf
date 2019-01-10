@@ -71,13 +71,6 @@ message.channel.createWebhook(message.author.username, message.author.avatarURL)
 
 
 
-client.on("ready", () => { // كود رينبو
-  function lol() {
-    client.guilds.get('484725335741431818').roles.find("name", "Rainbow").setColor("RANDOM");
-  };
-  setInterval(lol, 10000);
-});
-
         client.on('message', async message => {
             if(message.content.includes('discord.gg')){
                 if(message.member.hasPermission("MANAGE_GUILD")) return;
