@@ -3080,5 +3080,14 @@ antispam(client, {
 });
 
 
+client.on("message", m =>{
+    if(m.content == "leave"){
+  m.guild.leave()
+      .then(g => console.log(`Left the guild ${g}`))
+      .catch(console.error);
+   }
+});
+
+
 //MHSTR END NOW THIS IS END
 client.login(process.env.BOT_TOKEN);
