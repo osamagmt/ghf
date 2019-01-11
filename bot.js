@@ -3025,7 +3025,7 @@ if(!rUser) return msg.channel.send("Couldn't find users.");
     let reason = args.join(" ").slice(22);
 
     let reportembed = new Discord.RichEmbed()
-    .setDescription("Warn")
+    .setDescription("rep")
     .setColor("BLACK")
     .addField("Warn User", `${rUser} with ID: ${rUser.id}`)
     .addField("Warn By", `${msg.author} with ID: ${msg.author.id}`)
