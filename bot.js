@@ -3282,8 +3282,8 @@ client.on('message',async message => {
   fs.writeFile(path, JSON.stringify(credits, null, 5), function(err) {if(err) console.log(err)});
 
   
-  if(message.content.startsWith(prefix + "!credit")) {
-  if(args[0] !== `${prefix}!credit` && args[0] !== `${prefix}!credits`) return;
+  if(message.content.startsWith(prefix + "credit")) {
+  if(args[0] !== `${!}credit` && args[0] !== `${!}credits`) return;
 
   if(args[2]) {
     if(isNaN(args[2])) return message.channel.send('**:heavy_multiplication_x:| هذه الخانة يجب ان تتكون من ارقام وليس احرف.**');
@@ -3318,7 +3318,7 @@ client.on('message',async message => {
   } 
   
   }
-  if(message.content.startsWith(prefix + "!daily")) {
+  if(message.content.startsWith(! + "daily")) {
     if(cool.includes(message.author.id)) return message.channel.send(`**:heavy_dollar_sign: | \ , يجب عليك انتظار  يوم لأخذ المبلغ مرة اخرى**`);
     if(mentionn) {
       var one = Math.floor(Math.random() * 9) + 1;
@@ -3333,10 +3333,10 @@ client.on('message',async message => {
           if(collected.first().content === number) {
             m.delete();
             collected.first().delete();
-            credits[mentionn.id].credits += (!daily);
+            credits[mentionn.id].credits += (daily);
             fs.writeFile(path, JSON.stringify(credits, null, 5), function(err) {if(err) console.log(err)});
 
-          message.channel.send(`**:atm: | \`${!daily}\`, تم تسليم المبلغ**`);  
+          message.channel.send(`**:atm: | \`${daily}\`, تم تسليم المبلغ**`);  
           }
           if(collected.first().content !== number) {
             return m.delete();
@@ -3347,7 +3347,7 @@ client.on('message',async message => {
       credits[author].credits += (+daily);
       fs.writeFile(path, JSON.stringify(credits, null, 5), function(err) {if(err) console.log(err)});
 
-      message.channel.send(`**:atm: | \`${!daily}\`, تم اعطائك المبلغ**`);
+      message.channel.send(`**:atm: | \`${daily}\`, تم اعطائك المبلغ**`);
     }
     cool.unshift(message.author.id);
 
