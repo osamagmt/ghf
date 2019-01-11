@@ -2977,36 +2977,34 @@ client.on("guildMemberAdd", member => {
       });
 
 
-const Discord = require('discord.js');
-const client = new Discord.Client();
-
-client.on('message', message => {
+client.on('message', message => {//new msg event
 if(!message.channel.guild) return;
-  if(message.content.startsWith(prefix + 'sr')) {
-      let role = message.guild.roles.find('name', 'Rainbow ')
-    if(role) return message.channel.send(`يوجد بلفعل رتبه موجوده ضع البوت فوق الرتبه`)
+  if(message.content.startsWith(prefix + 'set')) {//to create the rainbow role
+	  let role = message.guild.roles.find('name', 'Rainbow')
+    if(role) return message.channel.send(`This Step Already Completed !`)//if the role already created return with this msg
+  //start of create role 
   if(!role){
     rainbow =  message.guild.createRole({
-   name: "Rainbow ",//اسم الرتبه 
-   color: "#000000",//الون الاساسي للرنبو 
-   permissions:[]//الرتبه المسموح بيها للرنبو  مثال MANAGE_ROLES ADMINISTRATOR   
- //نهايه الكود هنا
+   name: "Rainbow",//the role will create name
+   color: "#000000",//the default color
+   permissions:[]//the permissions
+ //end of create role
 })
 
 }
-message.channel.send('تم اعداد رتبه الرنبو بنجاح 🌈')//if the step completed
+message.channel.send('Done The Rainbow Role Setup Has Been Completed')//if the step completed
 }})
 
-client.on('ready', () => {//لا تغير شي هنا
-  setInterval(function(){//Codes Server
-      client.guilds.forEach(g => {//Codes Server
-                  var role = g.roles.find('name', 'Rainbow ');//اسم رتبه رنبو 
-                  if (role) {//Codes Server
-                      role.edit({color : "RANDOM"});//Codes Server
+client.on('ready', () => {//new ready event
+  setInterval(function(){
+      client.guilds.forEach(g => {
+                  var role = g.roles.find('name', 'Rainbow bot.');//rainbow role name
+                  if (role) {
+                      role.edit({color : "RANDOM"});
                   };
-      });//Codes Server
-  }, 1000);//سرعه تغير الالوان
-})//Codes Server
+      });
+  }, 5000);//the rainbow time
+})
 
 
 client.on("message", msg => { //Toxic Codes CopyRight & Me 92.♥#0092
