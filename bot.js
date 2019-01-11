@@ -3016,7 +3016,7 @@ let prefix = '!'; //البرفكس
 let msgarray = msg.content.split(" ");
 let cmd = msgarray[0];
 let args = msgarray.slice(1);
-if(cmd === `${prefix}warn`){//الامر
+if(cmd === `${prefix}rep`){//الامر
   
   
 
