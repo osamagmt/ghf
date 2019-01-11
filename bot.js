@@ -307,7 +307,7 @@ var chaLimit = message.channel.awaitMessages(filter, { max: 1, time: 20000, erro
     limit = coll.first().content
 coll.first().delete()
  
-  e.edit("جاري اعداد الغرفه الرجاء الانتضار...")
+  e.edit("جاري اعداد الغرفه الء الانتضار...")
   message.guild.createChannel(name, type).then(c => {
     c.edit({
       userLimit: limit
@@ -698,7 +698,7 @@ client.on('message', async msg => {
 					var videos = await youtube.searchVideos(searchString, 5);
 					let index = 0;
 					const embed1 = new Discord.RichEmbed()
-			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
+			        .setDescription(`**تم التشغيل** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 
 					.setFooter("sliver Bot")
