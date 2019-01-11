@@ -3035,12 +3035,12 @@ if(!rUser) return msg.channel.send("Couldn't find users.");
     
     
     let reportchannel = msg.guild.channels.find(`log`,"اسم الروم"); //حط هنا اسم الروم الي يوريك بعض المعلومات
-    if(!reportchannel) return msg.channel.send("Couldn't find `اسم الروم` channel. "); //ط هنا اسم الروم الي يوريك بعض المعلومات
+    if(!reportchannel) return msg.channel.send("Couldn't find `log` channel. "); //ط هنا اسم الروم الي يوريك بعض المعلومات
     
     msg.delete().catch(O_o=>{});
     reportchannel.send(reportembed);
-    let role = msg.guild.roles.find(`prox bot`, 'اسم الرتبة'); //حط هنا اسم الرتبة
-    if(!role) return msg.guild.channel.send("Could't find `اسم الرتبة` role."); //حط هنا اسم الرتبة
+    let role = msg.guild.roles.find(`member`, 'اسم الرتبة'); //حط هنا اسم الرتبة
+    if(!role) return msg.guild.channel.send("Could't find `member` role."); //حط هنا اسم الرتبة
     rUser.addRole(role);
     
         return;
