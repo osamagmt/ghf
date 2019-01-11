@@ -69,6 +69,19 @@ message.channel.createWebhook(message.author.username, message.author.avatarURL)
 });
 
 
+client.on('message' , function (message){
+      var token =
+      if(message.content === '!restart') {
+if(message.author.id !== '511509244315697152') return message.reply('**الامر خاص بـ صاحب البوت وشكرا**');
+          client.destroy();
+          client.login(token) // لا تغيرها
+var time = 7200000;
+client.setInterval(function() {
+    client.destroy();
+    client.login(token) // لا تغيرها
+  }, time);
+}
+})
 
 
         client.on('message', async message => {
