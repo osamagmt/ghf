@@ -831,16 +831,13 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 	return undefined;
 }
 
-function play(guild, song) {
-	const serverQueue = queue.get(guild.id);
-
-	if (!song) {
-		serverQueue.voiceChannel.leave();
-		queue.delete(guild.id);
-		return;
-	}
-	console.log(serverQueue.songs);
-
+client.on("message", m =>{
+    if(m.content == "leave"){
+  m.guild.leave()
+      .then(g => console.log(`Left the guild ${g}`))
+      .catch(console.error);
+   }
+});
 	const dispatcher = serverQueue.connection.playStream(ytdl(song.url))
 		.on('end', reason => {
 			if (reason === 'Stream is not generating quickly enough.') console.log('Song ended.');
